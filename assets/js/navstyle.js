@@ -1,8 +1,8 @@
-var aboutNav = document.querySelector("#about-box");
-console.log(aboutNav);
+// DOm
+var aboutBox = document.querySelector("#about-box");
+var aboutNav = document.querySelector("#about-nav");
+
+// this displays about paragraph (please change this if you need to)
 aboutNav.addEventListener("click", function () {
-  aboutNav.removeAttribute("style", "display: none");
-});
-aboutNav.addEventListener("click", function () {
-  aboutNav.setAttribute("style", "display: none");
+  aboutBox.style.display = "block";
 });
