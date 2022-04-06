@@ -3,13 +3,14 @@
   font-size: 16px;
 }
 
-.hero-body p {
-  color: white;
+body {
+  background-image: url(https://previews.123rf.com/images/last19/last191910/last19191000074/131892750-hierbas-de-alimentos-saludables-especias-para-usar-como-ingredientes-de-cocina-sobre-un-fondo-de-mad.jpg?fj=1);
 }
 
 .container {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   height: 100vh;
 }
 
@@ -29,12 +30,7 @@
   background-color: #3b352c;
 }
 
-#wmm-box {
-  color: white;
-  background-color: #3b352c;
-}
-
-#mood-box {
+#recipe-box {
   color: white;
   background-color: #3b352c;
 }
@@ -62,29 +58,11 @@
   transform: translateY(2px);
 }
 
-#generate-button {
-  background-color: #3b352c;
-  font-family: "Courier Prime", monospace;
-  border-style: solid;
-  border-width: 2px;
-  border-color: white;
-}
-
-#generate-button:hover {
-  transition: 0.6s;
-  color: #3b352c;
-  background-color: white;
-}
-
-#generate-button:active {
-  transform: translateY(2px);
-}
-
 form {
   padding: 10px;
 }
 
-#movie-search {
+#recipe-search {
   font-size: 250%;
   border-radius: 15px;
   text-align: center;
@@ -126,36 +104,6 @@ form {
   transform: translateY(2px);
 }
 
-#wmm-nav:hover {
-  color: #3b352c;
-}
-
-#wmm-nav:active {
-  transform: translateY(2px);
-}
-
-#mood-nav:hover {
-  color: #3b352c;
-}
-
-#mood-nav:active {
-  transform: translateY(2px);
-}
-
-#results-list {
-  margin-top: 10px;
-  color: white;
-}
-
-#random-list {
-  margin-top: 10px;
-  color: white;
-}
-
-body {
-  background-image: url(https://previews.123rf.com/images/last19/last191910/last19191000074/131892750-hierbas-de-alimentos-saludables-especias-para-usar-como-ingredientes-de-cocina-sobre-un-fondo-de-mad.jpg?fj=1);
-}
-
 footer {
   position: absolute;
   bottom: 0%;
@@ -164,18 +112,4 @@ footer {
   width: 100vw;
   text-align: center;
   height: 30px;
-}
-
-li a {
-  color: white;
-}
-
-li a:hover {
-  color: white;
-  opacity: 60%;
-}
-img {
-  height: 150px;
-  width: 150px;
-  padding-top: 25px;
 }
