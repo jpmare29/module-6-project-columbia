@@ -128,3 +128,8 @@
     display: flex;
     justify-content: center;
 }
+
+.pagination .page-link {
+    background-color: #3b352c;
+    color: white;
+}
