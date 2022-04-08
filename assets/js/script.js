@@ -26,14 +26,41 @@ const formSubmitHandler = event => {
   fetch(searchUrl).then(response => {
     return response.json();
   }).then(data => {
-    for (let i = 0; i < 8; i++) {
-      let ingredientArray = data.hits[i].recipe.ingredientLines;
-      ingredientArray.forEach(element => {
-        console.log(element);
-      })
-      console.log(data.hits[i].recipe.ingredientLines);
+    const resultsArray = data.hits;
+    //add display to first result block
+    function pageCards() {
+      let i = 0;
+      for (i; i < 5; i++) {
+        cardArray.forEach(element => {
+          let currentRecipe = resultsArray[i];
+          let title = currentRecipe.recipe.label;
+          let imageUrl = currentRecipe.recipe.image;
+          let ingredientsArray = currentRecipe.recipe.ingredientLines;
+          let recipeDetails = currentRecipe.recipe.url;
+          let servingNumber = currentRecipe.recipe.yield;
+          element.children('.title-class').text(title);
+          element.children('.image-class').find('img').attr('src', imageUrl);
+          element.children('.ingredient-class').empty();
+          ingredientsArray.forEach(item => {
+            let newDiv = document.createElement('div');
+            newDiv.textContent = item;
+            element.append(newDiv);
+          })
+          element.children('.servings-class').text(servingNumber);
+          element.children('.recipe-class').find('a').attr('href', recipeDetails).text(title);
+        })
+      }
     }
-    console.log(data);
+
+    // console.log(resultsArray);
+    // for (let i = 0; i < 8; i++) {
+    //   let ingredientArray = data.hits[i].recipe.ingredientLines;
+    //   ingredientArray.forEach(element => {
+    //     console.log(element);
+    //   })
+    //   console.log(data.hits[i].recipe.ingredientLines);
+    // }
+    // console.log(data);
   })
 }
 
