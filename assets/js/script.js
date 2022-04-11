@@ -28,7 +28,7 @@ const formSubmitHandler = event => {
   }).then(data => {
     const resultsArray = data.hits;
     //add display to first result block
-    function pageCards() {
+    function pageOneCards() {
       let i = 0;
       for (i; i < 5; i++) {
         cardArray.forEach(element => {
