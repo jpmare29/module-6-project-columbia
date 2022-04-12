@@ -8,9 +8,10 @@ body {
 }
 
 .container {
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  /* align-items: center; */
+  height: 85vh;
   flex-wrap: wrap;
 }
 
@@ -121,12 +122,9 @@ form {
 }
 
 footer {
-  position: relative;
-  bottom: 0%;
   background-color: #3b352c;
   color: white;
-  width: 100vw;
-  text-align: center;
+
   height: 30px;
 }
 
