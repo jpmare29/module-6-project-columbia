@@ -17,9 +17,9 @@ and producing a certain food, or dish.
 
 User Persona:
 ages 2 - ∞
-This application is for people of all ages
+This application is for people of all ages.
 No age discrimination here! if you love food, this application is for you.
-well, be at least 2, we are #FDNYSmart!
+well, we take that back, you have to be at least 2. we are #FDNYSmart!
 
 APIs used
 
