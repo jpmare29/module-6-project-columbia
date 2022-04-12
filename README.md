@@ -5,7 +5,7 @@ HOME of FOODIES
 
 ## user story
 
-AS AN a foodie / food nerd
+AS A food nerd
 I WANT go on a website or an app to search for food recipes.
 I WANT to be presented with a recipe I searched without having to go to a food blog or read through pages about the food's history.
 
