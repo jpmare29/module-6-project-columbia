@@ -36,9 +36,10 @@
             <h1>Where's My Recipes?</h1>
           </div>
 
-          <div class ="col" >
-            <form>
-              <input id="recipe-search" type="search"  name="search" />
+          <div class ="col">
+            <form id="user-form">
+              <label for="recipe"></label>
+              <input id="recipe" name="recipe" type="text" autofocus="true" placeholder="Enter Main Ingredient!">
             </form>
           </div>
          
@@ -56,8 +57,8 @@
 
             <div class="col-md-6 d-flex justify-content-center">
 
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+              <div id='card1' class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="">
                 <div class="card-body">
                   <h5 class="card-title">Recipe title</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -67,9 +68,9 @@
 
             </div>
 
-            <div class="col-md-6 d-flex justify-content-center">
+            <div id="card2" class="col-md-6 d-flex justify-content-center">
               <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="" class="card-img-top" alt="">
                 <div class="card-body">
                   <h5 class="card-title">Recipe title</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -83,8 +84,8 @@
 
             <div class="col-md-6 d-flex justify-content-center">
 
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+              <div id="card3" class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="">
                 <div class="card-body">
                   <h5 class="card-title">Recipe title</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -95,8 +96,8 @@
             </div>
 
             <div class="col-md-6 d-flex justify-content-center">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+              <div id="card4" class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="">
                 <div class="card-body">
                   <h5 class="card-title">Recipe title</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -111,11 +112,11 @@
 
         <!-- <nav aria-label="Page navigation example">
           <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li id="link1" class="page-item"><a class="page-link" href="#">1</a></li>
+            <li id="link2" class="page-item"><a class="page-link" href="#">2</a></li>
+            <li id="link3" class="page-item"><a class="page-link" href="#">3</a></li>
+            <li id="link4" class="page-item"><a class="page-link" href="#">4</a></li>
+            <li id="link5" class="page-item"><a class="page-link" href="#">5</a></li>
           </ul>
         </nav> -->
   
@@ -137,7 +138,10 @@
             RECIPES FOR FOODIES 2022 by Justin Mare, Russsel Kamal, Juan Zuniga, Franklin Tsung, and Mahamadou Kabba
           </h2>
         </footer>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/navstyle.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/navstyle.js"></script>
+
 </body>
 </html>
