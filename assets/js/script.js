@@ -33,6 +33,7 @@ const formSubmitHandler = event => {
   }).then(data => {
     const resultsArray = data.hits;
     //add display to first result block
+    recipeBox.style.display = "block";
     function pageOneCards() {
       let i = 0;
         cardArray.forEach(element => {
@@ -45,7 +46,7 @@ const formSubmitHandler = event => {
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
           element.find('.card-text').text('Serves:' + servingNumber);
-          element.data('array', i);
+          element.attr('data-number', i);
           i++
         })
     }
@@ -62,6 +63,7 @@ const formSubmitHandler = event => {
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
           element.find('.card-text').text('Serves:' + servingNumber);
+          element.attr('data', i);
           i++
         })
     }
@@ -78,6 +80,7 @@ const formSubmitHandler = event => {
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
           element.find('.card-text').text('Serves:' + servingNumber);
+          element.attr('data', i);
           i++
         })
     }
@@ -94,6 +97,7 @@ const formSubmitHandler = event => {
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
           element.find('.card-text').text('Serves:' + servingNumber);
+          element.attr('data', i);
           i++
         })
     }
@@ -110,9 +114,20 @@ const formSubmitHandler = event => {
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
           element.find('.card-text').text('Serves:' + servingNumber);
+          element.attr('data', i);
           i++
         })
     }
+
+    function fullRecipePage() {
+    }
+    
+    card1.on('click', element => {
+      console.log(element.currentTarget.dataset.number)
+      console.log(resultsArray[element.currentTarget.dataset.number])
+    })
+      
+    
           // element.children('.ingredient-class').empty();
           // ingredientsArray.forEach(item => {
           //   let newDiv = document.createElement('div');
@@ -140,20 +155,4 @@ const formSubmitHandler = event => {
   
 }
 
-
 userForm.addEventListener('submit', formSubmitHandler);
-
-/*
-            ingredientsArray.forEach((item) => {
-              let newDiv = document.createElement("div");
-              newDiv.textContent = item;
-              element.append(newDiv);
-            });
-            element.children(".servings-class").text(servingNumber);
-            element
-              .children(".recipe-class")
-              .find("a")
-              .attr("href", recipeDetails)
-              .text(title);
-          });
-          */
