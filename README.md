@@ -1,7 +1,7 @@
 # project-1-group-8-columbia
+
 Project Title:
 HOME of FOODIES
-
 
 <img width="1279" alt="Screen Shot 2022-04-11 at 8 38 34 PM" src="https://user-images.githubusercontent.com/91260564/163021371-f130d54b-6295-4207-91c4-35488d033448.png">
 
@@ -17,9 +17,9 @@ and producing a certain food, or dish.
 
 User Persona:
 ages 2 - ∞
-This application is for people of all ages
+This application is for people of all ages.
 No age discrimination here! if you love food, this application is for you.
-well, be at least 2, we are #FDNYSmart!
+well, we take that back, you have to be at least 2. we are #FDNYSmart!
 
 APIs used
 
@@ -28,3 +28,7 @@ APIs used
 
 2. The Cocktail DB gave us our drinks
    "www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+   <<<<<<< HEAD
+
+3. TWITER => allow us to share to twiter?
+   > > > > > > > 3258d90d3fc575449f463295bd4d6e94eeb6e50e
