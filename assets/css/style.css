@@ -130,7 +130,8 @@ form {
 footer {
   background-color: #3b352c;
   color: white;
-
+  position: fixed;
+  bottom: 0;
   height: 30px;
 }
 

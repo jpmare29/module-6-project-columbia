@@ -1,22 +1,7 @@
-var url = "www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
-{
-  /* <div class="box" id="mood-box" style="display: none">
-<h1>Mood</h1>
-<!-- food Search -->
-
-<!-- recipes Generator Button-->
-<input
-  class="button is-danger"
-  type="button"
-  id="generate-button"
-  value="Generate"
-/> */
-}
-
-//const recipeUrl = 'https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=1dde8709&app_key=a8d10560bc3d45c586fa2de0978a729b';
-
 const userForm = document.getElementById('user-form');
 const searchedIngredient = document.getElementById('recipe');
+const finalRecipeContainer = document.getElementById('fullrecipe-box');
+const finalRecipe = $('#finalrecipe');
 const card1 = $('#card1');
 const card2 = $('#card2');
 const card3 = $('#card3');
@@ -32,20 +17,18 @@ const formSubmitHandler = event => {
     return response.json();
   }).then(data => {
     const resultsArray = data.hits;
-    //add display to first result block
+    recipeBox.style.display = "block";
     function pageOneCards() {
       let i = 0;
         cardArray.forEach(element => {
           let currentRecipe = resultsArray[i];
           let title = currentRecipe.recipe.label;
           let imageUrl = currentRecipe.recipe.image;
-          let ingredientsArray = currentRecipe.recipe.ingredientLines;
-          let recipeDetails = currentRecipe.recipe.url;
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('.card-text').text('Serves:' + servingNumber);
-          element.data('array', i);
+          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.attr('data-number', i);
           i++
         })
     }
@@ -56,12 +39,11 @@ const formSubmitHandler = event => {
           let currentRecipe = resultsArray[i];
           let title = currentRecipe.recipe.label;
           let imageUrl = currentRecipe.recipe.image;
-          let ingredientsArray = currentRecipe.recipe.ingredientLines;
-          let recipeDetails = currentRecipe.recipe.url;
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('.card-text').text('Serves:' + servingNumber);
+          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.attr('data-number', i);
           i++
         })
     }
@@ -72,12 +54,11 @@ const formSubmitHandler = event => {
           let currentRecipe = resultsArray[i];
           let title = currentRecipe.recipe.label;
           let imageUrl = currentRecipe.recipe.image;
-          let ingredientsArray = currentRecipe.recipe.ingredientLines;
-          let recipeDetails = currentRecipe.recipe.url;
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('.card-text').text('Serves:' + servingNumber);
+          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.attr('data-number', i);
           i++
         })
     }
@@ -88,12 +69,11 @@ const formSubmitHandler = event => {
           let currentRecipe = resultsArray[i];
           let title = currentRecipe.recipe.label;
           let imageUrl = currentRecipe.recipe.image;
-          let ingredientsArray = currentRecipe.recipe.ingredientLines;
-          let recipeDetails = currentRecipe.recipe.url;
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('.card-text').text('Serves:' + servingNumber);
+          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.attr('data-number', i);
           i++
         })
     }
@@ -104,32 +84,56 @@ const formSubmitHandler = event => {
           let currentRecipe = resultsArray[i];
           let title = currentRecipe.recipe.label;
           let imageUrl = currentRecipe.recipe.image;
-          let ingredientsArray = currentRecipe.recipe.ingredientLines;
-          let recipeDetails = currentRecipe.recipe.url;
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('.card-text').text('Serves:' + servingNumber);
+          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.attr('data-number', i);
           i++
         })
     }
-          // element.children('.ingredient-class').empty();
-          // ingredientsArray.forEach(item => {
-          //   let newDiv = document.createElement('div');
-          //   newDiv.textContent = item;
-          //   element.append(newDiv);
-          // })
-          // element.children('.recipe-class').find('a').attr('href', recipeDetails).text(title);
+
+    function fullRecipePage(selected) {
+      let currentRecipe = selected;
+      let title = currentRecipe.recipe.label;
+      let imageUrl = currentRecipe.recipe.image;
+      let ingredientsArray = currentRecipe.recipe.ingredientLines;
+      let recipeDetails = currentRecipe.recipe.url;
+      let recipeDisplay = $('#finalrecipe');
+      recipeDisplay.find('.card-title').text(title);
+      recipeDisplay.find('img').attr('src', imageUrl);
+      if (recipeDisplay.find('#ingredients').first()) {
+        recipeDisplay.find('#ingredients').empty();
+      }
+      ingredientsArray.forEach(element => {
+          let newDiv = document.createElement('div');
+          newDiv.textContent = element;
+          recipeDisplay.find('#ingredients').append(newDiv);
+        })
+      $('#recipe-url').find('a').attr('href', recipeDetails).text('Click for full Recipe!');
+      finalRecipeContainer.style.display = 'block';
+    }
     
-    // console.log(resultsArray);
-    // for (let i = 0; i < 8; i++) {
-    //   let ingredientArray = data.hits[i].recipe.ingredientLines;
-    //   ingredientArray.forEach(element => {
-    //     console.log(element);
-    //   })
-    //   console.log(data.hits[i].recipe.ingredientLines);
-    // }
-    // console.log(data);
+    card1.on('click', event => {
+      let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
+      recipeBox.style.display = 'none';
+      fullRecipePage(currentFullRecipe);
+    })
+    card2.on('click', event => {
+      let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
+      recipeBox.style.display = 'none';
+      fullRecipePage(currentFullRecipe);
+    })
+    card3.on('click', event => {
+      let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
+      recipeBox.style.display = 'none';
+      fullRecipePage(currentFullRecipe);
+    })
+    card4.on('click', event => {
+      let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
+      recipeBox.style.display = 'none';
+      fullRecipePage(currentFullRecipe);
+    })
     pageOneCards();
     $('#link1').on('click', pageOneCards);
     $('#link2').on('click', pageTwoCards);
@@ -140,20 +144,4 @@ const formSubmitHandler = event => {
   
 }
 
-
 userForm.addEventListener('submit', formSubmitHandler);
-
-/*
-            ingredientsArray.forEach((item) => {
-              let newDiv = document.createElement("div");
-              newDiv.textContent = item;
-              element.append(newDiv);
-            });
-            element.children(".servings-class").text(servingNumber);
-            element
-              .children(".recipe-class")
-              .find("a")
-              .attr("href", recipeDetails)
-              .text(title);
-          });
-          */
