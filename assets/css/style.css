@@ -78,14 +78,21 @@ body {
 form {
   padding: 10px;
 }
-
-#recipe-search {
+#recipe {
   font-size: 250%;
   border-radius: 15px;
   text-align: center;
   font-family: "Courier Prime", monospace;
   color: #3b352c;
 }
+
+/* #recipe-search {
+  font-size: 250%;
+  border-radius: 15px;
+  text-align: center;
+  font-family: "Courier Prime", monospace;
+  color: #3b352c;
+} */
 
 .navbar-menu {
   background-color: #3b352c;

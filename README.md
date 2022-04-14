@@ -30,5 +30,5 @@ APIs used
    "www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
    <<<<<<< HEAD
 
-3. TWITER => allow us to share to twiter?
+3. TWITER => allow us to share to twiter
    > > > > > > > 3258d90d3fc575449f463295bd4d6e94eeb6e50e
