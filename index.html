@@ -23,9 +23,9 @@
             <div class="navbar-end">
               <a class="navbar-item" id="about-nav"> About </a>
   
-              <a class="navbar-item" id="recipe-nav"> Recipes </a>
+              <a class="navbar-item" id="recipe-nav"> History </a>
   
-              <a class="navbar-item" id="search-nav"> What are you cooking up? </a>
+              <a class="navbar-item" id="search-nav" href="#recipe"> What are you cooking up? </a>
               <a class="twitter-share-button"
               href="https://twitter.com/intent/tweet"
               data-size="large"
@@ -133,15 +133,21 @@
 
         <div id="fullrecipe-box" class="container bg-white" style="display: none;">
           <div id="finalrecipe" class="col-8">
+            <a id='close-button' href="#" class="btn btn-danger">Close</a>
+            <div class="card-body">
+              <h5 class="card-title">Recipe title</h5>
+              <div id='ingredients' class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+              <div id="recipe-url" class="card-text">
+                <a href=""></a>
+              </div>
+            </div>
             <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Recipe title</h5>
-                  <div id='ingredients' class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-                  <div id="recipe-url" class="card-text">
-                    <a href=""></a>
-                  </div>
-                </div>
           </div>
+        </div>
+
+        <div class="box" id="history" style="display: none;">
+          <h1>History</h1>
+          <div class="box" id="subhistory"></div>
         </div>
 
         <div class="box" id="about-box" style = "display: none" >
@@ -163,8 +169,8 @@
         </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
     <script src="assets/js/navstyle.js"></script>
+    <script src="./assets/js/script.js"></script>
     <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 </body>
 </html>

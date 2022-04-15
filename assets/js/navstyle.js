@@ -1,26 +1,29 @@
 // DOm
-let aboutBox = document.querySelector("#about-box");
-let aboutNav = document.querySelector("#about-nav");
+let aboutBox = $("#about-box");
+let aboutNav = $("#about-nav");
 // ---------
-let recipeBox = document.querySelector("#card-container");
-let recipeNav = document.querySelector("#recipe-nav");
+let recipeBox = $("#card-container");
+let recipeNav = $("#recipe-nav");
 // ------
-let searchNav = document.querySelector("#search-nav");
-let searchInput = document.querySelector("#recipe-box");
+let searchNav = $("#search-nav");
+let searchHistory = $("#history");
+let closeButton = $('#close-button');
+const recipeContainer = $('#fullrecipe-box');
 
 // this displays about paragraph (please change this if you need to)
-aboutNav.addEventListener("click", function () {
-  aboutBox.style.display = "block";
-  //searchInput.style.display = "none";
-  recipeBox.style.display = "none";
+aboutNav.on("click", function () {
+  aboutBox.toggle();
+  recipeBox.toggle();
 });
-recipeNav.addEventListener("click", function () {
-  aboutBox.style.display = "none";
-  //searchInput.style.display = "none";
-  recipeBox.style.display = "block";
+recipeNav.on("click", function () {
+  searchHistory.toggle();
+  recipeBox.toggle();
 });
-searchNav.addEventListener("click", function () {
-  aboutBox.style.display = "none";
-  recipeBox.style.display = "none";
-  searchInput.style.display = "block";
-});
+closeButton.on('click', () => {
+  recipeContainer.hide();
+  recipeBox.show();
+})
+// searchNav.on("click", function () {
+//   aboutBox.toggle();
+//   recipeBox.toggle();
+// });

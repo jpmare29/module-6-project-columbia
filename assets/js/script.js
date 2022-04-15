@@ -1,12 +1,13 @@
 const userForm = document.getElementById('user-form');
 const searchedIngredient = document.getElementById('recipe');
-const finalRecipeContainer = document.getElementById('fullrecipe-box');
+const finalRecipeContainer = $('#fullrecipe-box');
 const finalRecipe = $('#finalrecipe');
 const card1 = $('#card1');
 const card2 = $('#card2');
 const card3 = $('#card3');
 const card4 = $('#card4');
 const cardArray = [card1, card2, card3, card4];
+const appendHistory = $('#subhistory');
 
 
 const formSubmitHandler = event => {
@@ -17,7 +18,7 @@ const formSubmitHandler = event => {
     return response.json();
   }).then(data => {
     const resultsArray = data.hits;
-    recipeBox.style.display = "block";
+    recipeBox.show()
     function pageOneCards() {
       let i = 0;
         cardArray.forEach(element => {
@@ -93,6 +94,20 @@ const formSubmitHandler = event => {
         })
     }
 
+    function addRecipeHistory(recipeToStore) {
+      let historyObject = JSON.parse(localStorage.getItem('history'));
+      if (historyObject) {
+        let recipeArray = historyObject;
+        console.log(recipeArray);
+        let newArray = [recipeToStore.recipe.label, recipeToStore.recipe.url];
+        recipeArray.push(newArray);
+        localStorage.setItem('history', JSON.stringify(recipeArray));
+      } else {
+        let recipeArray = [[recipeToStore.recipe.label, recipeToStore.recipe.url]];
+        localStorage.setItem('history', JSON.stringify(recipeArray));
+      }
+    }
+
     function fullRecipePage(selected) {
       let currentRecipe = selected;
       let title = currentRecipe.recipe.label;
@@ -116,23 +131,31 @@ const formSubmitHandler = event => {
     
     card1.on('click', event => {
       let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
-      recipeBox.style.display = 'none';
+      recipeBox.hide();
       fullRecipePage(currentFullRecipe);
+      addRecipeHistory(currentFullRecipe);
+      populateHistory();
     })
     card2.on('click', event => {
       let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
-      recipeBox.style.display = 'none';
+      recipeBox.hide();
       fullRecipePage(currentFullRecipe);
+      addRecipeHistory(currentFullRecipe);
+      populateHistory();
     })
     card3.on('click', event => {
       let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
-      recipeBox.style.display = 'none';
+      recipeBox.hide();
       fullRecipePage(currentFullRecipe);
+      addRecipeHistory(currentFullRecipe);
+      populateHistory();
     })
     card4.on('click', event => {
       let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
-      recipeBox.style.display = 'none';
+      recipeBox.hide();
       fullRecipePage(currentFullRecipe);
+      addRecipeHistory(currentFullRecipe);
+      populateHistory();
     })
     pageOneCards();
     $('#link1').on('click', pageOneCards);
@@ -144,4 +167,21 @@ const formSubmitHandler = event => {
   
 }
 
+function populateHistory() {
+  let recipeArray = JSON.parse(localStorage.getItem('history'));
+  console.log(recipeArray);
+  appendHistory.empty();
+  if (recipeArray) {
+    recipeArray.forEach(element => {
+      let newDiv = document.createElement('div');
+      newDiv.classList.add('row');
+      let anchor = document.createElement('a');
+      anchor.setAttribute('href', element[1]);
+      anchor.textContent = element[0];
+      newDiv.append(anchor);
+      appendHistory.append(newDiv);
+    })
+  }
+}
+populateHistory();
 userForm.addEventListener('submit', formSubmitHandler);
