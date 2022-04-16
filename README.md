@@ -4,7 +4,7 @@ Project Title:
 HOME of FOODIES
 
 
-![2022-04-16](https://user-images.githubusercontent.com/74988217/163678184-765b0a1b-370a-4f73-b823-d0e64185d4a6.png)
+![2022-04-16 (1)](https://user-images.githubusercontent.com/74988217/163679537-54f74840-8097-41ce-86c8-a7ed57183566.png)
 
 
 [Link to Deployed Page](https://jpmare29.github.io/project-1-group-8-columbia/)
