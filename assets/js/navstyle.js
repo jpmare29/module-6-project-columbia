@@ -10,7 +10,7 @@ let searchHistory = $("#history");
 let closeButton = $('#close-button');
 const recipeContainer = $('#fullrecipe-box');
 
-// this displays about paragraph (please change this if you need to)
+// Event Handlers for toggling sections from Nav
 aboutNav.on("click", function () {
   aboutBox.toggle();
   recipeBox.toggle();
@@ -23,7 +23,3 @@ closeButton.on('click', () => {
   recipeContainer.hide();
   recipeBox.show();
 })
-// searchNav.on("click", function () {
-//   aboutBox.toggle();
-//   recipeBox.toggle();
-// });

@@ -1,3 +1,4 @@
+//Declaring DOM variables and function arrays
 const userForm = document.getElementById('user-form');
 const searchedIngredient = document.getElementById('recipe');
 const finalRecipeContainer = $('#fullrecipe-box');
@@ -9,17 +10,22 @@ const card4 = $('#card4');
 const cardArray = [card1, card2, card3, card4];
 const appendHistory = $('#subhistory');
 
-
+//callback function for submit event handler
 const formSubmitHandler = event => {
+  //prevent page from reloading and interpolate searched text into API url, clear for text
   event.preventDefault();
   let mainIngredient = searchedIngredient.value;
   let searchUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${mainIngredient}&app_id=1dde8709&app_key=a8d10560bc3d45c586fa2de0978a729b`
   searchedIngredient.value = '';
+  //fetch function call to API .then chain for promises
   fetch(searchUrl).then(response => {
     return response.json();
   }).then(data => {
     const resultsArray = data.hits;
+    //display hidden cards
     recipeBox.show()
+    //callback functions for when each "Page Number" is clicked to populate
+    //sections of recipes array 
     function pageOneCards() {
       let i = 0;
         cardArray.forEach(element => {
@@ -34,7 +40,6 @@ const formSubmitHandler = event => {
           i++
         })
     }
-
     function pageTwoCards() {
       let i = 4;
         cardArray.forEach(element => {
@@ -94,7 +99,7 @@ const formSubmitHandler = event => {
           i++
         })
     }
-
+    //function to store clicked recipes to localStorage in 2D array
     function addRecipeHistory(recipeToStore) {
       let historyObject = JSON.parse(localStorage.getItem('history'));
       if (historyObject) {
@@ -107,7 +112,7 @@ const formSubmitHandler = event => {
         localStorage.setItem('history', JSON.stringify(recipeArray));
       }
     }
-
+    //function to populate and display final selected recipe
     function fullRecipePage(selected) {
       let currentRecipe = selected;
       let title = currentRecipe.recipe.label;
@@ -128,7 +133,11 @@ const formSubmitHandler = event => {
       $('#recipe-url').find('a').attr('href', recipeDetails).text('Click for full Recipe!');
       finalRecipeContainer.style.display = 'block';
     }
-    
+    /*event listeners for ear mini card on click they read the data-number
+    value and assign a variable based on that index.
+    first hides mini cards, calls recipe display function,
+    adds selected recipe to localStorage, and updates the html
+    display of the history object*/
     card1.on('click', event => {
       let currentFullRecipe = resultsArray[event.currentTarget.dataset.number];
       recipeBox.hide();
@@ -157,7 +166,9 @@ const formSubmitHandler = event => {
       addRecipeHistory(currentFullRecipe);
       populateHistory();
     })
+    //call to first page function after form is submitted and API is called
     pageOneCards();
+    //eventlisteners for "Pages" of mini cards
     $('#link1').on('click', pageOneCards);
     $('#link2').on('click', pageTwoCards);
     $('#link3').on('click', pageThreeCards);
@@ -166,7 +177,8 @@ const formSubmitHandler = event => {
   })
   
 }
-
+//populates the html history section by reading localStorage and 
+//dynamically generating htlm elements for each stored recipe
 function populateHistory() {
   let recipeArray = JSON.parse(localStorage.getItem('history'));
   appendHistory.empty();
@@ -182,5 +194,7 @@ function populateHistory() {
     })
   }
 }
+//call to populateHistory upon first loading page
 populateHistory();
+//eventListener for form submission with callback function
 userForm.addEventListener('submit', formSubmitHandler);
