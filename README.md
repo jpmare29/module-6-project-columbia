@@ -3,10 +3,11 @@
 Project Title:
 HOME of FOODIES
 
-<img width="1279" alt="Screen Shot 2022-04-11 at 8 38 34 PM" src="https://user-images.githubusercontent.com/91260564/163021371-f130d54b-6295-4207-91c4-35488d033448.png">
 
-Link to Deployed Page:
-https://jpmare29.github.io/project-1-group-8-columbia/
+![2022-04-16](https://user-images.githubusercontent.com/74988217/163678184-765b0a1b-370a-4f73-b823-d0e64185d4a6.png)
+
+
+[Link to Deployed Page](https://jpmare29.github.io/project-1-group-8-columbia/)
 
 ## user story
 
@@ -71,7 +72,8 @@ and populate the final recipe page. The function to store the selected recipe
 in local storage is called and finally the populateHistory function 
 is called again to update the display. All of these different pages
 were shown and hidden using a combination of the jQuery hide()/show()/toggle()
-functions
+functions. When the user finds a recipe they like they can share it via the embedded
+Twitter button, which utilizes the Twitter API.
 
 User Persona:
 ages 2 - ∞
@@ -81,12 +83,12 @@ well, we take that back, you have to be at least 2. we are #FDNYSmart!
 
 APIs used:
 
-1. EDAMAM => gives us our ingredients nutrition
-   `https://api.edamam.com/api/recipes/v2?type=public&q=${mainIngredient}&app_id=1dde8709&app_key=a8d10560bc3d45c586fa2de0978a729b`;
+1. EDAMAM => gives us our recipe array/object
 
 2. TWITER => allow us to share to twiter
 
 CSS Frameworks used:
 
 Bootstrap
+
 Bulma
