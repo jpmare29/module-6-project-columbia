@@ -13,11 +13,9 @@ const recipeContainer = $('#fullrecipe-box');
 // Event Handlers for toggling sections from Nav
 aboutNav.on("click", function () {
   aboutBox.toggle();
-  recipeBox.toggle();
 });
 recipeNav.on("click", function () {
   searchHistory.toggle();
-  recipeBox.toggle();
 });
 closeButton.on('click', () => {
   recipeContainer.hide();
