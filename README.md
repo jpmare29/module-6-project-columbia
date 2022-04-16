@@ -7,7 +7,7 @@ HOME of FOODIES
 ![2022-04-16](https://user-images.githubusercontent.com/74988217/163678184-765b0a1b-370a-4f73-b823-d0e64185d4a6.png)
 
 
-[Link to Deployed Page](https://jpmare29.github.io/project-1-group-8-columbia/)
+![Link to Deployed Page](https://jpmare29.github.io/project-1-group-8-columbia/)
 
 ## user story
 
