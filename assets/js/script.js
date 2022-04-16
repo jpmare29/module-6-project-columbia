@@ -14,6 +14,7 @@ const formSubmitHandler = event => {
   event.preventDefault();
   let mainIngredient = searchedIngredient.value;
   let searchUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${mainIngredient}&app_id=1dde8709&app_key=a8d10560bc3d45c586fa2de0978a729b`
+  searchedIngredient.value = '';
   fetch(searchUrl).then(response => {
     return response.json();
   }).then(data => {
@@ -98,7 +99,6 @@ const formSubmitHandler = event => {
       let historyObject = JSON.parse(localStorage.getItem('history'));
       if (historyObject) {
         let recipeArray = historyObject;
-        console.log(recipeArray);
         let newArray = [recipeToStore.recipe.label, recipeToStore.recipe.url];
         recipeArray.push(newArray);
         localStorage.setItem('history', JSON.stringify(recipeArray));
@@ -169,7 +169,6 @@ const formSubmitHandler = event => {
 
 function populateHistory() {
   let recipeArray = JSON.parse(localStorage.getItem('history'));
-  console.log(recipeArray);
   appendHistory.empty();
   if (recipeArray) {
     recipeArray.forEach(element => {
