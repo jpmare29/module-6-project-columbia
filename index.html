@@ -13,6 +13,7 @@
     <title>Recipes</title>
 </head>
 <body>
+  <!-- Nav Bar -->
     <header>
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
@@ -38,7 +39,7 @@
         </nav>
       </header>
       
-      
+    <!-- Recipe Search Form -->
     <main class="container">
         <div class="box row" id="recipe-box"  >
           <div class = "col">
@@ -62,6 +63,8 @@
           </div>
         </div>
 
+        <!-- Mini Recipe Cards Container -->
+        
         <div id="card-container" class= "row" style = "display: none" >
           <div class="new-box">
 
@@ -120,6 +123,9 @@
               </div>
             </div>
           </div>
+
+          <!-- "Page" Numbers -->
+
           <nav aria-label="Page navigation example">
             <ul class="pagination">
               <li id="link1" class="page-item"><a class="page-link" href="#">1</a></li>
@@ -130,6 +136,8 @@
             </ul>
           </nav>
         </div>
+
+        <!-- Final Recipe  -->
 
         <div id="fullrecipe-box" class="container bg-white" style="display: none;">
           <div id="finalrecipe" class="col-8">
@@ -145,10 +153,14 @@
           </div>
         </div>
 
+        <!-- History Section -->
+
         <div class="box" id="history" style="display: none;">
           <h1>History</h1>
           <div class="box" id="subhistory"></div>
         </div>
+
+        <!-- About Section -->
 
         <div class="box" id="about-box" style = "display: none" >
           <h1>About</h1>
@@ -167,6 +179,8 @@
             RECIPES FOR FOODIES 2022 by Justin Mare, Russsel Kamal, Juan Zuniga, Franklin Tsung, and Mahamadou Kabba
           </h2>
         </footer>
+
+        <!-- Linked scripts and jQuery -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/navstyle.js"></script>
