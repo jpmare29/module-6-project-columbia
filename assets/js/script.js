@@ -131,7 +131,7 @@ const formSubmitHandler = event => {
           recipeDisplay.find('#ingredients').append(newDiv);
         })
       $('#recipe-url').find('a').attr('href', recipeDetails).text('Click for full Recipe!');
-      finalRecipeContainer.style.display = 'block';
+      finalRecipeContainer.show();
     }
     /*event listeners for ear mini card on click they read the data-number
     value and assign a variable based on that index.
