@@ -35,7 +35,7 @@ const formSubmitHandler = event => {
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.find('.card-text').text('Serves:' + servingNumber);
           element.attr('data-number', i);
           i++
         })
@@ -49,7 +49,7 @@ const formSubmitHandler = event => {
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.find('.card-text').text('Serves:' + servingNumber);
           element.attr('data-number', i);
           i++
         })
@@ -64,7 +64,7 @@ const formSubmitHandler = event => {
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.find('.card-text').text('Serves:' + servingNumber);
           element.attr('data-number', i);
           i++
         })
@@ -79,7 +79,7 @@ const formSubmitHandler = event => {
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.find('.card-text').text('Serves:' + servingNumber);
           element.attr('data-number', i);
           i++
         })
@@ -94,7 +94,7 @@ const formSubmitHandler = event => {
           let servingNumber = currentRecipe.recipe.yield;
           element.find('.card-title').text(title);
           element.find('img').attr('src', imageUrl);
-          element.find('#ingredients').text('Serves:' + servingNumber);
+          element.find('.card-text').text('Serves:' + servingNumber);
           element.attr('data-number', i);
           i++
         })
