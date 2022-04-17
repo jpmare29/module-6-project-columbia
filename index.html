@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href:"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/style.css">
     <title>Recipes</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-  <!-- Nav Bar -->
+
     <header>
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
-            <h1> HOME OF FOODIES </h1>
+            <h1> HOME OF FOODIEs </h1>
           </div>
   
           <div id="navbarBasicExample" class="navbar-menu">
@@ -26,7 +25,8 @@
   
               <a class="navbar-item" id="recipe-nav"> History </a>
   
-              <a class="navbar-item" id="search-nav" href="#recipe"> What Are You Cooking Up? </a>
+              <a class="navbar-item" id="search-nav" href="#recipe"> What are you cooking up? </a>
+             
               <a class="twitter-share-button"
               href="https://twitter.com/intent/tweet"
               data-size="large"
@@ -37,155 +37,71 @@
             </div>
           </div>
         </nav>
-      </header>
-      
-    <!-- Recipe Search Form -->
-    <main class="container">
-        <div class="box row" id="recipe-box"  >
-          <div class = "col">
-            <h1>Where's My Recipes?</h1>
-          </div>
+    </header>
+ 
 
-          <div class ="col">
-            <form id="user-form">
-              <!-- <label for="recipe"></label> -->
-            <input id="recipe" name="recipe" type="text" autofocus="true" placeholder="Recipe/Ingredient">
+
+
+
+    <section>
+        <div class="container">
+            <h1 class="brand" id="recipe">Where's My Recipes?</h1>
+            <form>
+                <input type="text" placeholder="Enter Main Ingredient And Press Enter">
+                <ion-icon name="search-outline"></ion-icon>
+            </form>
+            <div class="box" id="about-box" style = "display: none" >
+              <h1>About</h1>
+              <p>
+                "What should I cook?" "How do I cook that?" -- HOME OF FOODIES have an answer for you!
+                HOME OF FOODIEs  is here to better your culinary options.
+                This recipe app provides sets of instruction used for preparing
+                and producing a certain food, dish, or drink.
+                The purpose of this app is to keep a precise record of the ingredients used,
+                the amounts needed, and the way they are combined.
+                To avoid making Rachel's trifle, we strongly recomended HOME OF FOODIES app.
+                <b>NOTE: PRESS ABOUT AGAIN TO HIDE THIS MESSAGE</b>
+              </p>
+            </div>
+           
+            <div class="search-result"> </div>
+
+                  <!-- History Section -->
+<!-- History Section -->
+
+      <!-- History Section -->
+
+      <div class="box" id="history" style="display: none;">
+        <h1>History</h1>
+        <div class="box" id="subhistory"></div>
+      </div>
+                
             
-          </div>
-         
-          <div class="col">
-            <input
-            class="button is-danger"
-            type="submit"
-            id="search-button"
-            value="Search"/>
-          </form>
-          </div>
-        </div>
-
-        <!-- History Section -->
-
-        <div class="box" id="history" style="display: none;">
-          <h1>History</h1>
-          <div class="box" id="subhistory"></div>
-        </div>
-
-        <!-- Mini Recipe Cards Container -->
-        
-        <div id="card-container" class= "row" style = "display: none" >
-          <!-- "Page" Numbers -->
-
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li id="link1" class="page-item"><a class="page-link" href="#">1</a></li>
-              <li id="link2" class="page-item"><a class="page-link" href="#">2</a></li>
-              <li id="link3" class="page-item"><a class="page-link" href="#">3</a></li>
-              <li id="link4" class="page-item"><a class="page-link" href="#">4</a></li>
-              <li id="link5" class="page-item"><a class="page-link" href="#">5</a></li>
-            </ul>
-          </nav>
-
-          <div class="new-box">
-
-            <div class="col-md-6 d-flex justify-content-center">
-
-              <div id='card1' class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Recipe title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">View Recipe</a>
-                  
-                </div>
-              </div>
-
+           <!-- test code for reference <div class="item">
+                    <img src="./Appcrown  logo 5x5.jpg" alt="">
+                    <div class="flex-container">
+                        <h1 class="title">This is a recipe item</h1>
+                        <a class="view-btn" href="#">View Recipe</a>
+                      </div>s
+                      <p class="item-data">Calories: 120</p>
+                </div>-->
             </div>
-
-            <div id="card2" class="col-md-6 d-flex justify-content-center">
-              <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Recipe title</h5>
-                  
-
-
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">View Recipe</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="new-box">
-
-            <div class="col-md-6 d-flex justify-content-center">
-
-              <div id="card3" class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Recipe title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">View Recipe</a>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center">
-              <div id="card4" class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Recipe title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">View Recipe</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+    </section>
 
-        <!-- Final Recipe  -->
+   
+      <footer>
+        <h2>
+          RECIPES FOR FOODIES 2022 by Justin Mare, Russsel Kamal, Juan Zuniga, Franklin Tsung, and Mahamadou Kabba
+        </h2>
+      </footer>
 
-        <div id="fullrecipe-box" class="container bg-white" style="display: none;">
-          <div id="finalrecipe" class="col-8">
-            <a id='close-button' href="#" class="btn btn-danger">Close</a>
-            <div class="card-body">
-              <h5 class="card-title">Recipe title</h5>
-              <div id='ingredients' class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-              <div id="recipe-url" class="card-text">
-                <a href=""></a>
-              </div>
-            </div>
-            <img src="" class="card-img-top" alt="">
-          </div>
-        </div>
 
-        <!-- About Section -->
-
-        <div class="box" id="about-box" style = "display: none" >
-          <h1>About</h1>
-          <p>
-            "What should I cook?" "How do I cook that?" -- HOME OF FOODIES have an answer for you!
-            HOME OF FOODIEs  is here to better your culinary options.
-            This recipe app provides sets of instruction used for preparing
-            and producing a certain food, dish, or drink.
-            The purpose of this app is to keep a precise record of the ingredients used,
-            the amounts needed, and the way they are combined.
-            To avoid making Rachel's trifle, we strongly recomended HOME OF FOODIES app.
-          </p>
-        </div>
-        <footer>
-          <h2>
-            RECIPES FOR FOODIES 2022 by Justin Mare, Russsel Kamal, Juan Zuniga, Franklin Tsung, and Mahamadou Kabba
-          </h2>
-        </footer>
-
-        <!-- Linked scripts and jQuery -->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="assets/js/navstyle.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+<script src="./script.js"></script>
+<script src="./navstyle.js"></script>
 </body>
 </html>
