@@ -93,6 +93,24 @@
     font-size: 1.8rem;
     font-weight: 400;
   }
+
+  .btn{
+    text-decoration: none;
+    text-align: center;
+    width: 100px;
+    padding: 10px 0;
+    background-color: #404041;
+    border-color: antiquewhite;
+    border-style: solid;
+    color: whitesmoke;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 18px;
+    border-radius: 3px;
+    align-self: flex-start;
+    
+  }
+
   .view-btn {
     text-decoration: none;
     text-align: center;
@@ -152,6 +170,12 @@
   #search-nav{
     font-size: 25px;
     font-weight: bold; 
+  }
+
+  #history{
+    opacity: 0.5;
+    font-size: medium;
+    font-weight: bold;
   }
 
   .navbar {
